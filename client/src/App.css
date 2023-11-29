@@ -1,0 +1,148 @@
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  background-color: rgb(222, 222, 222);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #333333;
+  padding: 3rem;
+  text-align: center;
+  color: #f1c40f;
+}
+
+.pending {
+  &::before {
+    font-family: "Material Symbols Outlined";
+    content: "autorenew";
+    color: #f1c40f;
+    animation: spin 2s linear infinite;
+  }
+}
+
+.synced {
+  &::before {
+    font-family: "Material Symbols Outlined";
+    content: "check_circle";
+    color: #2ecc71;
+  }
+}
+
+.input-action {
+  width: 70%;
+  display: flex;
+  margin: 2em auto 2em;
+  padding: 0.25rem;
+  font-size: 1.25rem;
+  text-align: center;
+  border-radius: 5rem;
+  border: 1px solid #343434;
+
+  &:hover {
+    background-color: #3434341e;
+  }
+}
+
+.main-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li.synced, li.pending {
+  background-color: #303030;
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 0.5rem;
+
+  & input {
+    background-color: rgba(197, 197, 197, 0.9);
+    padding-inline-start: 1rem;
+    border-radius: 15px;
+    border: 1px solid #5050501e;
+    height: 30px;
+    /* width: 300px; */
+    flex: 10;
+
+    &:hover {
+      background-color: #2ecc7069;
+    }
+  }
+
+  & button {
+    background-color: #2ecc71;
+    padding-inline: 1rem;
+    border-radius: 15px;
+    border: 1px solid #5050501e;
+    height: 30px;
+    flex: 1;
+
+    &:hover {
+      background-color: rgba(219, 48, 48, 0.9);
+      color: #fff;
+    }
+  }
+}
+
+.subitem-container {
+  position: relative;
+  width: 100%;
+}
+
+.subitem-list {
+  background-color: #303030;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0.5rem; */
+  gap: 0.25rem;
+
+  & li {
+    background-color: #303030;
+    width: 100%;
+  }
+
+  & input {
+    width: 80%;
+    padding-inline-start: 1rem;
+    margin-right: 1rem;
+  }
+
+  & button#add-subitem {
+    background-color: #e99220d5;
+  }
+  
+  & button#add-subitem:hover {
+    background-color: rgb(173, 34, 173);
+    color: #fff;
+  }
+
+}
